@@ -15,10 +15,10 @@ const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '600'] });
 /* ------------------------------------------------------------------ */
 /* Replace these with the real clinic details before going live       */
 /* ------------------------------------------------------------------ */
-const PHONE_DISPLAY = '+91 90000 00000';
-const PHONE_TEL = '+919000000000';
-const WHATSAPP = 'https://wa.me/919000000000?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20at%20Samarth%20Clinic';
-const ADDRESS = 'Near Civil Lines, Dehri-on-Sone, Rohtas, Bihar - 821307';
+const PHONE_DISPLAY = '+91 70041 19766';
+const PHONE_TEL = '+917004119766';
+const WHATSAPP = 'https://wa.me/917004119766?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20at%20Samarth%20Clinic';
+const ADDRESS = 'Canal Road, Dehri-on-Sone, Rohtas, Bihar - 821307';
 const MAP_EMBED = 'https://www.google.com/maps?q=Dehri-on-Sone,Bihar&output=embed';
 const GBP_LINK = '#'; // paste your Google Business Profile link here
 
@@ -173,24 +173,34 @@ function Nav() {
 function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 md:px-6 pt-12 md:pt-20 pb-16 grid md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 pt-4 md:pt-10 pb-16 grid md:grid-cols-2 gap-10 items-center">
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <Eyebrow>Speech &amp; Occupational Therapy Center • Dehri-on-Sone</Eyebrow>
-          <h1 className={`${baloo.className} text-4xl md:text-5xl font-extrabold text-[#0F3B3A] mt-5 leading-tight`}>
+          <h1 className={`${baloo.className} text-3xl md:text-3xl font-extrabold text-[#0F3B3A] mt-5 leading-tight`}>
             Helping every patient find clear <span className="text-[#146C6B]">speech</span> and everyday confidence.
           </h1>
-          <p className="text-[#3F5453] mt-5 text-base md:text-lg leading-relaxed max-w-lg">
-            Samarth Clinic is Dehri-on-Sone's dedicated speech and occupational therapy center — for children and
-            adults alike. From speech delay and stammering to sensory issues, handwriting, and speech recovery
-            after a stroke, we treat it with care, patience, and a plan that actually works.
+          <p className="text-[#3F5453] mt-5 text-base md:text-md leading-relaxed max-w-lg">
+          Dehri-on-Sone's trusted Speech & Occupational Therapy Center for all ages.
+          Personalized care for speech delay, stammering, sensory issues, handwriting, and stroke recovery.
           </p>
-          <div className="flex flex-wrap gap-3 mt-7">
-            <a href={`tel:${PHONE_TEL}`} className="inline-flex items-center gap-2 bg-[#F5A623] text-[#0F3B3A] font-bold px-6 py-3.5 rounded-full hover:brightness-95 transition">
-              <Phone size={18} /> Call Now
-            </a>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white border border-[#146C6B]/25 text-[#0F3B3A] font-semibold px-6 py-3.5 rounded-full hover:bg-[#EAF6F4] transition">
-              <MessageCircle size={18} /> Book Free Consultation
-            </a>
+          <div className="flex gap-3 mt-7">
+          <a
+  href={`tel:${PHONE_TEL}`}
+  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#F5A623] text-[#0F3B3A] font-bold px-4 py-3.5 rounded-full hover:brightness-95 transition whitespace-nowrap"
+>
+  <Phone size={18} />
+  Call Now
+</a>
+
+<a
+  href={WHATSAPP}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex-1 inline-flex items-center justify-center gap-2 bg-white border border-[#146C6B]/25 text-[#0F3B3A] font-semibold px-4 py-3.5 rounded-full hover:bg-[#EAF6F4] transition whitespace-nowrap"
+>
+  <MessageCircle size={18} />
+  Book Free Consultation
+</a>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2 mt-8 text-sm text-[#3F5453]">
             {['Welcoming for all ages', 'Qualified therapists', 'Personal 1-on-1 attention'].map((t) => (
@@ -225,13 +235,13 @@ function Hero() {
 function DoctorCard({ name, role, tag, img, delay }) {
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, delay }}
-      className="bg-white rounded-2xl border border-[#146C6B]/10 p-6 flex-1">
-      <div className="relative w-16 h-16 rounded-full overflow-hidden bg-[#EAF6F4] mb-4">
-        <Image src={img} alt={`${name}, ${tag} at Samarth Clinic, Dehri-on-Sone`} fill sizes="64px" className="object-cover" />
+      className="bg-white rounded-2xl border border-[#146C6B]/10 p-6 flex-1 text-center">
+      <div className="relative w-28 h-28 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden bg-[#EAF6F4] mb-4 ring-2 ring-[#146C6B]/10">
+        <Image src={img} alt={`${name}, ${tag} at Samarth Clinic, Dehri-on-Sone`} fill sizes="(max-width: 768px) 112px, 128px" className="object-cover object-top" />
       </div>
       <span className="text-xs font-semibold uppercase tracking-wide text-[#F5A623]">{tag}</span>
-      <h3 className={`${baloo.className} text-xl font-bold text-[#0F3B3A] mt-1`}>{name}</h3>
-      <p className="text-[#3F5453] mt-1 text-sm">{role}</p>
+      <h3 className={`${baloo.className} text-xl font-bold text-[#0F3B3A] mt-1 text-center`}>{name}</h3>
+      <p className="text-[#3F5453] mt-1 text-sm text-center">{role}</p>
     </motion.div>
   );
 }
@@ -250,8 +260,8 @@ function Doctors() {
           />
         </div>
         <div className="md:col-span-3 flex flex-col sm:flex-row gap-5">
-          <DoctorCard name="Akansha Singh" role="Speech-Language & Occupational Therapist — heads the Speech &amp; OT department at Samarth Clinic." tag="Lead Therapist" img="/images/doctor-akansha.jpg" delay={0} />
-          <DoctorCard name="Dr. Prem Prakash" role="BPT, Physiotherapist — Founder &amp; Clinic Head of Samarth Clinic, Dehri-on-Sone." tag="Clinic Head" img="/images/doctor-prem.jpg" delay={0.1} />
+          <DoctorCard name="Akansha Singh" role="Speech &amp; Occupational Therapist — AIIMS Bhopal, Gandhi Medical College &amp; IGIMS Patna. Heads the Speech &amp; OT department at Samarth Clinic." tag="S&O Lead Therapist" img="/images/doctor-akansha.jpg" delay={0} />
+          <DoctorCard name="Dr. Prem Prakash" role="BPT, Physiotherapist — Founder &amp; Clinic Head of Samarth Clinic, Dehri-on-Sone." tag="Lead Physiotherapist" img="/images/doctor-prem.jpg" delay={0.1} />
         </div>
       </div>
     </section>
