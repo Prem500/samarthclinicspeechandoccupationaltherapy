@@ -54,7 +54,7 @@ const CONDITIONS = {
 };
 
 const TESTIMONIALS = [
-  ['Ritu Devi', 'Mother of a 4-year-old, Dehri', 'My son was not speaking full words at 3. After a few months with Akansha Ma\'am, he now talks in full sentences. Very patient with kids.'],
+  ['Ritu Devi', 'Mother of a 4-year-old, Dehri', 'My son was not speaking full words at 3. After a few months of therapy at Samarth Clinic, he now talks in full sentences. Very patient with kids.'],
   ['Manoj Kumar', 'Adult patient, Dehri-on-Sone', 'After my stroke, my speech was very unclear. A few months of therapy here and I can talk to my family and shopkeepers without hesitation now.'],
   ['Sunita Kumari', 'Parent, Sasaram', 'Doctor explains everything in simple Hindi-English. My daughter\'s handwriting has improved a lot in 3 months.'],
 ];
@@ -63,7 +63,7 @@ const FAQS = [
   ['At what age should I bring my child for speech therapy?', 'The earlier the better. If your child is not saying simple words by age 2, or sentences by age 3, it is a good time for a free check-up. But we treat all ages, including adults.'],
   ['Is stammering completely curable?', 'Many children outgrow it fully with early, correct therapy. Even for older kids and adults, we can teach techniques that make speech much smoother and reduce stress while talking.'],
   ['Do you only treat children, or adults too?', 'Both. We treat children with speech and developmental delays, and also adults recovering from stroke, accidents, or voice problems.'],
-  ['How many sessions will be needed?', 'It depends on the condition. After the first assessment, Akansha Ma\'am will explain a clear plan and rough timeline, whether it\'s for you or your child.'],
+  ['How many sessions will be needed?', 'It depends on the condition. After the first assessment, our therapist will explain a clear plan and rough timeline for your child.'],
   ['Do you provide home visits or online sessions?', 'Yes, home visits and online follow-up sessions are available in select cases. Please call us to check.'],
   ['Where exactly is the clinic located in Dehri-on-Sone?', 'We are located near Civil Lines, Dehri-on-Sone, Rohtas. Full directions are in the map below, or just call us and we will guide you.'],
 ];
@@ -175,13 +175,13 @@ function Hero() {
     <section id="home" className="relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 md:px-6 pt-4 md:pt-10 pb-16 grid md:grid-cols-2 gap-10 items-center">
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <Eyebrow>Speech &amp; Occupational Therapy Center • Dehri-on-Sone</Eyebrow>
+          <Eyebrow>Child Therapy • Dehri-on-Sone</Eyebrow>
           <h1 className={`${baloo.className} text-3xl md:text-3xl font-extrabold text-[#0F3B3A] mt-5 leading-tight`}>
-            Helping every patient find clear <span className="text-[#146C6B]">speech</span> and everyday confidence.
+            Helping every child find clear <span className="text-[#146C6B]">speech</span> and everyday confidence.
           </h1>
           <p className="text-[#3F5453] mt-5 text-base md:text-md leading-relaxed max-w-lg">
-          Dehri-on-Sone's trusted Speech & Occupational Therapy Center for all ages.
-          Personalized care for speech delay, stammering, sensory issues, handwriting, and stroke recovery.
+          Dehri-on-Sone's trusted Child Therapy center.
+          Personalized care for speech delay, stammering, sensory issues, handwriting, and developmental support.
           </p>
           <div className="flex gap-3 mt-7">
           <a
@@ -213,7 +213,7 @@ function Hero() {
           <div className="relative w-full aspect-[6/5] bg-[#EAF6F4]">
             <Image
               src="/images/hero-session.jpg"
-              alt="Speech therapist working with a patient at Samarth Clinic, Dehri-on-Sone"
+              alt="Child therapy session at Samarth Clinic, Dehri-on-Sone"
               fill priority sizes="(max-width: 768px) 100vw, 520px"
               className="object-cover"
             />
@@ -249,19 +249,18 @@ function DoctorCard({ name, role, tag, img, delay }) {
 function Doctors() {
   return (
     <section id="doctors" className="bg-[#EAF6F4] py-16 md:py-20">
-      <SectionHeading eyebrow="Meet the team" title="The people behind every patient's progress" sub="Two experienced therapists, one clear goal — real, lasting improvement." />
-      <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-5 gap-5 items-stretch">
-        <div className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[200px] bg-white">
+      <SectionHeading eyebrow="Meet the team" title="The leadership behind patient care" sub="Experienced care and dedicated guidance — real, lasting improvement." />
+      <div className="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-6 items-stretch">
+        <div className="relative rounded-2xl overflow-hidden min-h-[260px] bg-white">
           <Image
             src="/images/clinic-interior.jpg"
             alt="Inside Samarth Clinic therapy room, Dehri-on-Sone"
-            fill sizes="(max-width: 768px) 100vw, 320px"
+            fill sizes="(max-width: 768px) 100vw, 450px"
             className="object-cover"
           />
         </div>
-        <div className="md:col-span-3 flex flex-col sm:flex-row gap-5">
-          <DoctorCard name="Akansha Singh" role="Speech &amp; Occupational Therapist — AIIMS Bhopal, Gandhi Medical College &amp; IGIMS Patna. Heads the Speech &amp; OT department at Samarth Clinic." tag="S&O Lead Therapist" img="/images/doctor-akansha.jpg" delay={0} />
-          <DoctorCard name="Dr. Prem Prakash" role="BPT, Physiotherapist — Founder &amp; Clinic Head of Samarth Clinic, Dehri-on-Sone." tag="Lead Physiotherapist" img="/images/doctor-prem.jpg" delay={0.1} />
+        <div className="flex">
+          <DoctorCard name="Dr. Prem Prakash" role="BPT, Physiotherapist — Founder &amp; Clinic Head of Samarth Clinic, Dehri-on-Sone." tag="Founder &amp; Clinic Head" img="/images/doctor-prem.jpg" delay={0.1} />
         </div>
       </div>
     </section>
@@ -276,7 +275,7 @@ function Services() {
   const list = tab === 'speech' ? SPEECH_SERVICES : OT_SERVICES;
   return (
     <section id="services" className="py-16 md:py-20">
-      <SectionHeading eyebrow="What we treat" title="Speech &amp; Occupational Therapy Services" sub="Focused programs for children and adults, built around each patient's needs." />
+      <SectionHeading eyebrow="What we treat" title="Child Therapy Services" sub="Focused programs built around each child's needs." />
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-center gap-2 mb-9">
           {[['speech', 'Speech Therapy'], ['ot', 'Occupational Therapy']].map(([key, label]) => (
@@ -612,7 +611,7 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-4 grid sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div>
           <p className={`${baloo.className} text-lg font-bold text-white`}>Samarth Clinic</p>
-          <p className="text-sm mt-2 leading-relaxed">Speech &amp; Occupational Therapy Center, Dehri-on-Sone, Rohtas, Bihar.</p>
+          <p className="text-sm mt-2 leading-relaxed">Child Therapy, Dehri-on-Sone, Rohtas, Bihar.</p>
         </div>
         <div>
           <p className="text-white font-semibold text-sm mb-2">Quick Links</p>
